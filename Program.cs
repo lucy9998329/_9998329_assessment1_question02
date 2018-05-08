@@ -2,7 +2,7 @@
 
 namespace auto_ImplProperties
 {
-    //Creating a new class named Car
+    //Creating a new class
     class Cars
     {
         //Auto-implemented properties for get and set
@@ -18,17 +18,18 @@ namespace auto_ImplProperties
             Gearbox = gearbox;
         }
         //Methods
-        public string DisplayCars(){
+        public string getColour(){return Colour;}
+        public string getMake(){return Make;}
+        public string getGearbox(){return Gearbox;}
+        
+            
+        public string CarsDetail(){
             var carDetails = "Enter new car details bellow\n";            
             carDetails += $"Colour: {Colour}\n";
             carDetails += $"Make: {Make}\n";
             carDetails += $"Gearbox type: {Gearbox}\n";
             return carDetails;
-        } 
-        //Overriding the method in the Car class
-        public override string ToString(){
-            return $"This car is a "+ Colour + " " + Make + " with a " +  Gearbox  + " transmission. ";
-        }            
+        }       
     }
     class Program
     {
@@ -39,8 +40,8 @@ namespace auto_ImplProperties
 
             //Initializing a new object
             Cars car1 = new Cars ("green", "Ford", "manual");     
-            Console.WriteLine(car1.DisplayCars());
-            Console.WriteLine(car1.ToString());
+            Console.WriteLine(car1.CarsDetail());
+            Console.WriteLine($"This car is a " + car1.getColour() + " " + car1.getMake() + " with a " +  car1.getGearbox()  + " transmission. \n");
             Console.WriteLine("Press any key to exit");
             Console.ReadKey();
         }

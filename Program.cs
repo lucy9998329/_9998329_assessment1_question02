@@ -24,7 +24,7 @@ namespace auto_ImplProperties
         
             
         public string CarsDetail(){
-            var carDetails = "Enter new car details bellow\n";            
+            var carDetails = "Enter new car details below\n";            
             carDetails += $"Colour: {Colour}\n";
             carDetails += $"Make: {Make}\n";
             carDetails += $"Gearbox type: {Gearbox}\n";
